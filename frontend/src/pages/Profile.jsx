@@ -43,7 +43,7 @@ function Profile() {
 
 
   return (
- <div className='mt-30'>
+ <div className='mt-40 min-[500px]:mt-30'>
  <div className='max-w-[1300px] mx-auto mt-5 px-2 flex flex-col gap-2 sm:flex-row'>  
      <div className='w-full sm:w-[35%]'>
        <div className='border-[1px] border-gray-300 h-[300px] p-4 bg-white rounded-md shadow-md'>

@@ -24,6 +24,7 @@ function Cart() {
 
   const handlecheckOut = ()=>{
        navigate('/checkout')
+       window.scroll(0,0)
   }
 
 
@@ -33,11 +34,11 @@ function Cart() {
       {
 
 cart.length === 0 ? (
-  <div className='mt-32'>
+  <div className='mt-40 min-[500px]:mt-32'>
     <EmptyCart/>
   </div>
 ): (
-  <div className='mt-30'>
+  <div className='mt-36 min-[500px]:mt-30'>
   <div className='max-w-[1300px] mx-auto mt-5'>
          <h1 className='text-xl sm:text-2xl md:text-3xl font-bold ml-5 sm:ml-35'>Shooping Cart {cart.length}</h1>  
        <div className='mt-4 w-full max-w-[1200px] mx-auto p-2 min-h-[500px]'>

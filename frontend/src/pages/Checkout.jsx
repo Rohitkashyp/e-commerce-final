@@ -119,10 +119,10 @@ function Checkout() {
   }
 
   try {
-    const res = await axios.post(`${API_EMAIL}/checkout`,OrderData)
     setIsloading(true)
-    console.log(res)
-    console.log(res.data)
+    const res = await axios.post(`${API_EMAIL}/checkout`,OrderData)
+    // console.log(res)
+    // console.log(res.data)
     localStorage.removeItem("cart")
     setCart([])
 
@@ -169,7 +169,7 @@ function Checkout() {
 
 
   return (
-    <div className='mt-30'>
+    <div className='mt-36 min-[500px]:mt-30'>
         <div className='max-w-[1300px] mx-auto mt-2'>
                <h1 className='text-2xl font-bold ml-6 sm:ml-35 mb-2'>Checkout</h1>  
          <div className='w-full max-w-[1100px] mx-auto p-2'>
@@ -231,11 +231,10 @@ function Checkout() {
                                 
                             </div>
                             <div className='w-full mt-4'>
-                                  <button type='submit' 
-                                 disabled={isloading}
+                                  <button type='submit' disabled={isloading}
                                   className='w-full bg-orange-600 px-4 p-2 text-white text-[16px]
                                   cursor-pointer rounded-md'>
-                                    {isloading ? 'Placing Order...': 'Place Order'}  
+                                    {isloading ? 'Processing...' : 'Place Order'}  
                                  </button>
                             </div>
                         </form>

@@ -50,7 +50,7 @@ function Hero() {
   },[nextslide])
 
   return (
-    <main className='mt-35'>
+    <main className='mt-36 min-[500px]:mt-35'>
        <div className='max-w-[1300px] p-2 mx-auto'>
           <div className='w-full'>
              <div className='w-full relative h-[60vh]'>

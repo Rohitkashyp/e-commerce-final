@@ -139,7 +139,7 @@ function Allproducts() {
   return ( 
  <div>
    
-<section className='py-6 mt-25' id="product-section">
+<section className='py-6 mt-28 min-[500px]:mt-25' id="product-section">
 
           {/* isOpen */}
      {

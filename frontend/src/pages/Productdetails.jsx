@@ -60,7 +60,7 @@ function Productdetails() {
    if(!product ||  Object.keys(product).length === 0){
       return (
         
-            <div className='mt-30'>
+            <div className='mt-36 min-[500px]:mt-30'>
                <div className='w-full h-[300px] flex justify-center items-center rounded-md bg-white'>
                  <h1 className='text-2xl font-medium'>Product Searching...</h1>
                </div>
@@ -70,7 +70,7 @@ function Productdetails() {
 
    return (
 
-      <div className='mt-30'>
+      <div className='mt-36 min-[500px]:mt-30'>
          <div className='max-w-[1300px] mx-auto mt-5 px-2'>
                  
            <div className='w-full max-w-[1200px] mx-auto grid grid-cols-1 min-[510px]:grid-cols-1 min-[610px]:grid-cols-2 sm:grid-cols-2 md:[grid-template-columns:60%_40%] gap-6 overflow-hidden'>

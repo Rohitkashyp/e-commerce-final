@@ -1,4 +1,3 @@
-
 import React, { useState ,useContext, useEffect } from 'react'
 import { FaBars } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
@@ -56,32 +55,37 @@ const handleLogout = ()=>{
 
   return (
   <>
- <nav className={`px-2 py-0.5 min-[450px]:p-6 shadow-xl bg-white w-full fixed top-0 left-0 right-0 z-50 ${isopen ? 'hidden':'block'}`}>
+ <nav className={`px-2 py-0.5 min-[450px]:p-6 shadow-xl bg-[#131a22] text-white min-[500px]:bg-white min-[500px]:text-black w-full h-[130px] min-[500px]:h-auto fixed top-0 left-0 right-0 z-50 ${isopen ? 'hidden':'block'}`}>
 
   
  <div className='max-w-[1300px] mx-auto'>
-  <div className='flex justify-between items-center w-full'>
-     <div>
+  <div className='flex justify-center min-[500px]:justify-between items-center w-full'>
+     <div className='absolute top-6 left-4 min-[500px]:static min-[500px]:top-auto min-[500px]:left-auto'>
         
-        <h1 className='text-[24px] sm:text-[30px] font-bold mb-3 min-[450px]:mb-0'>Best,<span className='text-green-500 text-[20px] sm:text-[24px]'>Deals</span></h1>
+        <h1 className='font-bold text-[26px] lg:text-[30px]'>Best,<span className='text-green-500 font-bold text-[22px] lg:text-[24px]'>Deals</span></h1>
      </div>
      {/* search input  */}
-      <div className='border-b-[0.3px] min-[450px]:border-[1px] mb-0.5 relative border-gray-500 w-[160px] min-[450px]:w-[200px] min-[639px]:w-[300px]
-       p-2 min-[450px]:mt-0 mt-12 min-[450px]:mr-0 mr-16 min-[450px]:rounded-md'>
-     <input type="text" name="" value={search} id="" onChange={(e)=>setSearch(e.target.value)} placeholder='Serach Products...' className='outline-none text-sm font-medium ' />
-    
-
-
-     {
-      search.trim() !== "" && (
-        <button onClick={() =>{
-          setSearch("")
-          navigate('/all_products')
-        }} className='text-base md:text-xl absolute top-3 right-3'><FaTimes /></button>
-      )
-    }
-      
+   
+     <div className='py-2 px-1 border-[0.5px] cursor-pointer border-gray-300 shadow-sm bg-white text-black absolute top-18 left-1/2 -translate-x-1/2 min-[500px]:left-auto min-[500px]:-translate-x-0 min-[500px]:static min-[500px]:top-auto mx-auto w-[90%] min-[500px]:w-[200px] min-[560px]:w-[250px] min-[624px]:w-[310px] min-[850px]:w-[220px] min-[900px]:w-[260px] min-[930px]:w-[280px] min-[970px]:w-[310px] flex justify-center items-center rounded-md'>
+       <div className='w-[90%]'>
+            <div className=''>
+            <input type="text" name="" value={search} id="" onChange={(e)=>setSearch(e.target.value)} placeholder='Serach Products...' className='outline-none text-[16px] min-[500px]:text-[14px] font-medium'/>
+            </div>
+        </div>
+       <div className='w-[10%]'>
+       {
+          search.trim() !== "" && (
+            <button onClick={() =>{
+              setSearch("")
+              navigate('/all_products')
+              window.scroll(0,0)
+            }} className='text-[18px] min-[500px]:text-[16px]'><FaTimes /></button>
+          )
+       }
+        </div>
      </div>
+
+     {/* ............serach input end */}
      <div>
    
           <ul className='hidden min-[850px]:flex gap-4'>
@@ -137,14 +141,14 @@ const handleLogout = ()=>{
        
          </ul>
      <div className='min-[850px]:hidden'>
-         <button onClick={handleToggle} className='absolute top-8 right-1 cursor-pointer'>
+         <button onClick={handleToggle} className='absolute top-9 right-1 cursor-pointer'>
              <FaBars size={25}/>
          </button> 
            <div className=''>
             <Link to='/cart' className='' onClick={()=>{window.scroll(0,0)}}>
               <div className='flex'>
-                <button className='absolute top-8 right-10 cursor-pointer'><CgShoppingCart size={26}/></button>
-                <h4 className='text-[12px] absolute top-4 right-9 bg-red-500 text-white px-1.5 py-0.5 rounded-full cursor-pointer'>{cart.length}</h4>
+                <button className='absolute top-9 right-10 cursor-pointer'><CgShoppingCart size={26}/></button>
+                <h4 className='text-[12px] absolute top-5 right-9 bg-red-500 text-white px-1.5 py-0.5 rounded-full cursor-pointer'>{cart.length}</h4>
               </div>
            </Link> 
           </div> 

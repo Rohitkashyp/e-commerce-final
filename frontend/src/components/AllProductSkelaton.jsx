@@ -7,7 +7,7 @@ function AllProductSkelaton() {
 
     <div>
    
-    <section className='py-6 mt-25' id="product-section">
+    <section className='py-6 mt-32 min-[500px]:mt-25' id="product-section">
     
         
     
