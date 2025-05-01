@@ -5,12 +5,24 @@ import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 dotenv.config();
-// dotenv.config({ path: './.env' });
+
 
 const app = express()
-app.use(cors())
+// app.use(cors())
+
+const allowedOrigins = ['http://localhost:5173', 'https://e-com-best-deals.vercel.app'];
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type'],
+  credentials: false
+}));
+app.options('*', cors());
+
+
 app.use(bodyParser.json())
 const PORT = process.env.PORT || 4000;
+
 
 
 app.get('/', (req, res) => {
@@ -124,6 +136,17 @@ try {
 
 
 })
+
+
+
+//  server ping route 
+app.get('/health', async (req, res) => {
+  try {
+    res.status(200).json({ status: 'OK', message: 'Server is working' });
+  } catch (error) {
+    res.status(500).json({ status: 'Error', message: 'Server has issues' });
+  }
+});
 
 
 
