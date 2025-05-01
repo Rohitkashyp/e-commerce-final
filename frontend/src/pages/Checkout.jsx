@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from 'react'
 
 import { Cartcontext } from '../context/CartContext';
@@ -142,10 +141,13 @@ function Checkout() {
   } catch (error) {
     console.error("Error Order falied client side" ,error)
     // alert("Order Failed! please try again")
-    toast.error("Order Failed! please try again",{
-      position: "top-right",
-      autoClose: 3000
-   })
+  if(error.response && error.response.status === 500){
+    if(error.response.data.message.includes("Brevo")){
+      toast.error("Email service is currently down. Your order was received but confirmation email failed.");
+    }else{
+      toast.error("Order Failed! Please try again later.");
+    }
+  }
   }finally{
     setIsloading(false)
   }
